@@ -32,12 +32,3 @@ class LinkedList:
         new_node = ListNode(data)  # create an object of the ListNode class
         new_node.next = self.head  # set its next value to head
         self.head = new_node
-
-
-if __name__ == '__main__':
-    new_linked_list = LinkedList()
-    new_linked_list.insert_at_start(6)
-    new_linked_list.insert_at_start(1)
-    new_linked_list.insert_at_start(2)
-    new_linked_list.insert_at_start(8)
-    new_linked_list.traverse_list()
