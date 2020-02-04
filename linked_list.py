@@ -89,3 +89,20 @@ class LinkedList:
             new_node = ListNode(data)
             new_node.next = n.next
             n.next = new_node
+
+    def insert_at_index(self, index, data):
+        if index == 1:
+            new_node = ListNode(data)
+            new_node.next = self.head
+            self.head = new_node
+        i = 1
+        n = self.head
+        while i < index - 1 and n is not None:
+            n = n.next
+            i = i + 1
+        if n is None:
+            print("Index out of bound")
+        else:
+            new_node = ListNode(data)
+            new_node.next = n.next
+            n.next = new_node

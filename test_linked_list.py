@@ -93,3 +93,24 @@ def test_insert_before_item():
     new_linked_list.head = new_linked_list.head.next
     assert new_linked_list.head.val == 1
     new_linked_list.head = new_linked_list.head.next
+
+def test_insert_at_index():
+    new_linked_list = l.LinkedList()
+    new_linked_list.insert_at_start(1)
+    new_linked_list.insert_at_start(2)
+    new_linked_list.insert_at_start(3)
+    new_linked_list.insert_at_start(4)
+    new_linked_list.insert_at_start(5)  # 5 4 3 2 1 
+    new_linked_list.insert_at_index(3, 6)
+    assert new_linked_list
+    assert new_linked_list.head.val == 5
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 4
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 6
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 3
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 2
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 1
