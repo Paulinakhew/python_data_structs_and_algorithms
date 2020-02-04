@@ -94,6 +94,7 @@ def test_insert_before_item():
     assert new_linked_list.head.val == 1
     new_linked_list.head = new_linked_list.head.next
 
+
 def test_insert_at_index():
     new_linked_list = l.LinkedList()
     new_linked_list.insert_at_start(1)
@@ -107,9 +108,9 @@ def test_insert_at_index():
     new_linked_list.head = new_linked_list.head.next
     assert new_linked_list.head.val == 4
     new_linked_list.head = new_linked_list.head.next
-    assert new_linked_list.head.val == 6
-    new_linked_list.head = new_linked_list.head.next
     assert new_linked_list.head.val == 3
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 6
     new_linked_list.head = new_linked_list.head.next
     assert new_linked_list.head.val == 2
     new_linked_list.head = new_linked_list.head.next

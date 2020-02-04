@@ -91,11 +91,11 @@ class LinkedList:
             n.next = new_node
 
     def insert_at_index(self, index, data):
-        if index == 1:
+        if index == 0:
             new_node = ListNode(data)
             new_node.next = self.head
             self.head = new_node
-        i = 1
+        i = 0
         n = self.head
         while i < index - 1 and n is not None:
             n = n.next
