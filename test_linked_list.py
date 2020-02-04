@@ -143,17 +143,17 @@ def test_insert_all_functions():
     assert new_linked_list.head.val == 15
 
 
-def test_delete_at_start():
+def test_delete_at_start_and_end():
     new_linked_list = l.LinkedList()
     new_linked_list.insert_at_start(5)
     new_linked_list.insert_at_end(10)
     new_linked_list.insert_at_end(15)
     new_linked_list.insert_at_end(20)
     new_linked_list.delete_at_start()
+    new_linked_list.delete_at_end()
     assert new_linked_list
     assert new_linked_list.head.val == 10
     new_linked_list.head = new_linked_list.head.next
     assert new_linked_list.head.val == 15
-    new_linked_list.head = new_linked_list.head.next
-    assert new_linked_list.head.val == 20
-    new_linked_list.head = new_linked_list.head.next
+
+

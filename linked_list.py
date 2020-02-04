@@ -144,6 +144,15 @@ class LinkedList:
             return
         self.head = self.head.next
 
+    def delete_at_end(self):
+        if self.head is None:
+            print("The list has no element to delete")
+            return
+        n = self.head
+        while n.next.next is not None:
+            n = n.next
+        n.next = None
+
 
 if __name__ == "__main__":
     ll = LinkedList()
