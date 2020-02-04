@@ -126,6 +126,7 @@ def test_insert_all_functions():
     new_linked_list.insert_after_item(10, 17)
     new_linked_list.insert_before_item(17, 25)
     new_linked_list.insert_at_index(2, 8)
+    assert new_linked_list.get_count() == 7
     assert new_linked_list
     assert new_linked_list.head.val == 20
     new_linked_list.head = new_linked_list.head.next
@@ -140,3 +141,19 @@ def test_insert_all_functions():
     assert new_linked_list.head.val == 17
     new_linked_list.head = new_linked_list.head.next
     assert new_linked_list.head.val == 15
+
+
+def test_delete_at_start():
+    new_linked_list = l.LinkedList()
+    new_linked_list.insert_at_start(5)
+    new_linked_list.insert_at_end(10)
+    new_linked_list.insert_at_end(15)
+    new_linked_list.insert_at_end(20)
+    new_linked_list.delete_at_start()
+    assert new_linked_list
+    assert new_linked_list.head.val == 10
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 15
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 20
+    new_linked_list.head = new_linked_list.head.next
