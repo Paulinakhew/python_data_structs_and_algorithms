@@ -153,6 +153,23 @@ class LinkedList:
             n = n.next
         n.next = None
 
+    def delete_element_by_value(self, x):
+        if self.head is None:
+            print("The list has no element to delete")
+            return
+        if self.head.val == x:
+            self.head = self.head.next
+            return
+        n = self.head
+        while n.next is not None:
+            if n.next.val == x:
+                break
+            n = n.next
+        if n.next is None:
+            print("item not found in the list")
+        else:
+            n.next = n.next.next
+
 
 if __name__ == "__main__":
     ll = LinkedList()

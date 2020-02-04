@@ -149,11 +149,11 @@ def test_delete_at_start_and_end():
     new_linked_list.insert_at_end(10)
     new_linked_list.insert_at_end(15)
     new_linked_list.insert_at_end(20)
+    new_linked_list.insert_at_end(25)
     new_linked_list.delete_at_start()
     new_linked_list.delete_at_end()
+    new_linked_list.delete_element_by_value(15)
     assert new_linked_list
     assert new_linked_list.head.val == 10
     new_linked_list.head = new_linked_list.head.next
-    assert new_linked_list.head.val == 15
-
-
+    assert new_linked_list.head.val == 20
