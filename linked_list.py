@@ -47,3 +47,23 @@ class LinkedList:
         while n.next is not None:  # iterate through nodes in list
             n = n.next
         n.next = new_node  # set reference of last node to new_node
+
+    def insert_after_item(self, x, data):
+        '''Add item after another item in a linked list.
+
+        Keyword arguments:
+            x: (int) number after which you want to insert the new node
+            data: (int) the value for the new node
+        '''
+        n = self.head
+        print(n.next)
+        while n is not None:
+            if n.val == x:  # break loop if the current node is equal to x
+                break
+            n = n.next
+        if n is None:  # only occurs if the item is not found
+            print("item not in the list")
+        else:
+            new_node = ListNode(data)
+            new_node.next = n.next
+            n.next = new_node
