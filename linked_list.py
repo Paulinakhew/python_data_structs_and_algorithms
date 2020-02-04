@@ -170,6 +170,16 @@ class LinkedList:
         else:
             n.next = n.next.next
 
+    def reverse_linkedlist(self):
+        prev = None
+        n = self.head
+        while n is not None:
+            next = n.next
+            n.next = prev
+            prev = n
+            n = next
+        self.head = prev
+
 
 if __name__ == "__main__":
     ll = LinkedList()

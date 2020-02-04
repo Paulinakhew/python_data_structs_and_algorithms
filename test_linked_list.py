@@ -157,3 +157,24 @@ def test_delete_at_start_and_end():
     assert new_linked_list.head.val == 10
     new_linked_list.head = new_linked_list.head.next
     assert new_linked_list.head.val == 20
+
+
+def test_reverse_linkedlist():
+    new_linked_list = l.LinkedList()
+    new_linked_list.insert_at_start(5)
+    new_linked_list.insert_at_end(10)
+    new_linked_list.insert_at_end(15)
+    new_linked_list.insert_at_end(20)
+    new_linked_list.insert_at_end(25)
+    new_linked_list.reverse_linkedlist()
+    assert new_linked_list
+    assert new_linked_list.head.val == 25
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 20
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 15
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 10
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 5
+    new_linked_list.head = new_linked_list.head.next
