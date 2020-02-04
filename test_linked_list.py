@@ -14,7 +14,7 @@ def test_create_and_insert_single_value_into_linked_list():
     assert new_linked_list.head.val == 20
 
 
-def test_create_and_insert_multiple_values_into_linked_list():
+def test_insert_at_start():
     new_linked_list = l.LinkedList()
     new_linked_list.insert_at_start(1)
     new_linked_list.insert_at_start(2)
@@ -31,3 +31,31 @@ def test_create_and_insert_multiple_values_into_linked_list():
     assert new_linked_list.head.val == 2
     new_linked_list.head = new_linked_list.head.next
     assert new_linked_list.head.val == 1
+
+
+def test_insert_at_end():
+    new_linked_list = l.LinkedList()
+    new_linked_list.insert_at_end(1)
+    new_linked_list.insert_at_end(2)
+    new_linked_list.insert_at_end(3)
+    assert new_linked_list
+    assert new_linked_list.head.val == 1
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 2
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 3
+    new_linked_list.head = new_linked_list.head.next
+
+
+def test_insert_at_start_and_end():
+    new_linked_list = l.LinkedList()
+    new_linked_list.insert_at_start(1)
+    new_linked_list.insert_at_end(2)
+    new_linked_list.insert_at_start(3)
+    assert new_linked_list
+    assert new_linked_list.head.val == 3
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 1
+    new_linked_list.head = new_linked_list.head.next
+    assert new_linked_list.head.val == 2
+    new_linked_list.head = new_linked_list.head.next

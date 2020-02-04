@@ -27,8 +27,23 @@ class LinkedList:
         '''Insert an item at the start of a linked list.
 
         Keyword arguments:
-            data: (int) the value of the item that will be inserted
+            data: (int) the value of the item that will be inserted at the start
         '''
         new_node = ListNode(data)  # create an object of the ListNode class
         new_node.next = self.head  # set its next value to head
         self.head = new_node
+
+    def insert_at_end(self, data):
+        '''Insert an item at the end of a linked list.
+
+        Keyword arguments:
+            data: (int) the value of the item that will be inserted at the end
+        '''
+        new_node = ListNode(data)  # create an object of the ListNode class
+        if self.head is None:  # if there isn't an existing linked list
+            self.head = new_node  # set the value of head to new_node
+            return
+        n = self.head  # initialize n with head node
+        while n.next is not None:  # iterate through nodes in list
+            n = n.next
+        n.next = new_node  # set reference of last node to new_node
