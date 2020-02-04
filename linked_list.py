@@ -67,3 +67,25 @@ class LinkedList:
             new_node = ListNode(data)
             new_node.next = n.next
             n.next = new_node
+
+    def insert_before_item(self, x, data):
+        if self.head is None:  # check if list is empty
+            print("List has no element")
+            return
+        if x == self.head.val:  # if the element is located at first index
+            new_node = ListNode(data)
+            new_node.next = self.head
+            self.head = new_node
+            return
+        n = self.head
+        print(n.next)
+        while n.next is not None:
+            if n.next.val == x:
+                break
+            n = n.next
+        if n.next is None:
+            print("item not in the list")
+        else:
+            new_node = ListNode(data)
+            new_node.next = n.next
+            n.next = new_node
