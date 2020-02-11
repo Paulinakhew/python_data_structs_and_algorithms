@@ -53,7 +53,7 @@ class LinkedList:
 
         Keyword arguments:
             x: (int) number after which you want to insert the new node
-            data: (int) the value for the new node
+            data: (int) the value of the new node
         '''
         n = self.head
         print(n.next)
@@ -69,6 +69,12 @@ class LinkedList:
             n.next = new_node
 
     def insert_before_item(self, x, data):
+        '''Insert item before another item in a linked list.
+
+        Keyword arguments:
+            x: (int) number before which you want to insert the new node
+            data: (int) the value of the new node
+        '''
         if self.head is None:  # check if list is empty
             print("List has no element")
             return
@@ -91,6 +97,12 @@ class LinkedList:
             n.next = new_node
 
     def insert_at_index(self, index, data):
+        '''Insert item at given index
+
+        Keyword arguments:
+            index: (int) the index where you want to insert the new node
+            data: (int) the value of the new node
+        '''
         if index == 0:
             new_node = ListNode(data)
             new_node.next = self.head
@@ -108,6 +120,7 @@ class LinkedList:
             n.next = new_node
 
     def get_count(self):
+        '''Get the length of the linked list'''
         if self.head is None:
             return 0
         n = self.head
@@ -118,6 +131,11 @@ class LinkedList:
         return count
 
     def search_item(self, x):
+        '''Check linked list for value
+
+        Keyword arguments:
+            x: (int) the value that you are checking for
+        '''
         if self.head is None:
             print("List has no elements")
             return
@@ -131,6 +149,7 @@ class LinkedList:
         return False
 
     def make_new_list(self):
+        '''Create a new linked list from user input through the terminal'''
         nums = int(input("How many nodes do you want to create: "))
         if nums == 0:
             return
@@ -139,12 +158,14 @@ class LinkedList:
             self.insert_at_end(value)
 
     def delete_at_start(self):
+        '''Delete the element at the start of a linked list'''
         if self.head is None:
             print("The list has no element to delete")
             return
         self.head = self.head.next
 
     def delete_at_end(self):
+        '''Delete the element at the end of the linked list'''
         if self.head is None:
             print("The list has no element to delete")
             return
@@ -154,6 +175,11 @@ class LinkedList:
         n.next = None
 
     def delete_element_by_value(self, x):
+        '''Delete element of linked list with a specific value
+
+        Keyword arguments:
+            x: (int) the value of the node you want to delete
+        '''
         if self.head is None:
             print("The list has no element to delete")
             return
@@ -171,6 +197,7 @@ class LinkedList:
             n.next = n.next.next
 
     def reverse_linkedlist(self):
+        '''Reverse linked list'''
         prev = None
         n = self.head
         while n is not None:
