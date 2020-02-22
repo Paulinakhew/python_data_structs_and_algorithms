@@ -178,3 +178,25 @@ def test_reverse_linkedlist():
     new_linked_list.head = new_linked_list.head.next
     assert new_linked_list.head.val == 5
     new_linked_list.head = new_linked_list.head.next
+
+
+def test_check_if_palindrome():
+    new_linked_list = l.LinkedList()
+    new_linked_list.insert_at_start(5)
+    new_linked_list.insert_at_end(10)
+    new_linked_list.insert_at_end(15)
+    new_linked_list.insert_at_end(20)
+    new_linked_list.insert_at_end(25)
+    new_linked_list.insert_at_end(20)
+    new_linked_list.insert_at_end(15)
+    new_linked_list.insert_at_end(10)
+    new_linked_list.insert_at_end(5)
+    check = new_linked_list.check_if_palindrome()
+    assert check
+    new_linked_list.delete_at_start()
+    assert new_linked_list.head.val == 10
+    check = new_linked_list.check_if_palindrome()
+    assert not check
+    new_linked_list.delete_at_end()
+    check = new_linked_list.check_if_palindrome()
+    assert check

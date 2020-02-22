@@ -207,6 +207,14 @@ class LinkedList:
             n = next
         self.head = prev
 
+    def check_if_palindrome(self):
+        '''Check if linked list is the same forwards as it is backwards'''
+        palindrome = []
+        n = self.head
+        while n is not None:
+            palindrome.append(n.val)
+            n = n.next
+        return palindrome == palindrome[::-1]
 
 if __name__ == "__main__":
     ll = LinkedList()
